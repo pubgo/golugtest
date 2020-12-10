@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/pubgo/golug"
-	"github.com/pubgo/golug/cmd/tickrun/server"
-	"github.com/pubgo/golug/cmd/tickrun/worker"
+	"github.com/pubgo/golugtest/tickrun/server"
+	"github.com/pubgo/golugtest/tickrun/worker"
 )
 
 func main() {

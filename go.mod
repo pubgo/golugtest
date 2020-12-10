@@ -12,8 +12,8 @@ require (
 	github.com/golang/protobuf v1.4.3
 	github.com/json-iterator/go v1.1.10
 	github.com/pubgo/dix v0.1.3
-	github.com/pubgo/golug v0.0.0-20201209164348-3325a5b4b11a
-	github.com/pubgo/tikdog v0.0.0-20201130142326-26dbaa1f432c
+	github.com/pubgo/golug v0.0.2
+	github.com/pubgo/golugin v0.0.0-20201210031001-004b80370754
 	github.com/pubgo/xerror v0.3.1
 	github.com/pubgo/xlog v0.0.10
 	github.com/pubgo/xprocess v0.0.8

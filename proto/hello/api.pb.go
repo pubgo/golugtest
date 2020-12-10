@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.11.4
-// source: example/proto/hello/api.proto
+// source: proto/hello/api.proto
 
 package hello
 
@@ -29,14 +29,13 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-var File_example_proto_hello_api_proto protoreflect.FileDescriptor
+var File_proto_hello_api_proto protoreflect.FileDescriptor
 
-var file_example_proto_hello_api_proto_rawDesc = []byte{
-	0x0a, 0x1d, 0x65, 0x78, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f,
-	0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2f, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
-	0x05, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61,
-	0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1e, 0x65, 0x78, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x2f, 0x70, 0x72,
+var file_proto_hello_api_proto_rawDesc = []byte{
+	0x0a, 0x15, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2f, 0x61, 0x70,
+	0x69, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x05, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x1a, 0x1c,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x16, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x2f, 0x68, 0x65, 0x6c, 0x6c, 0x6f, 0x2f, 0x61, 0x70, 0x69, 0x31, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x32, 0x9d, 0x01, 0x0a, 0x07, 0x54, 0x65, 0x73, 0x74, 0x41, 0x70, 0x69,
 	0x12, 0x31, 0x0a, 0x07, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x0e, 0x2e, 0x68, 0x65,
@@ -63,11 +62,11 @@ var file_example_proto_hello_api_proto_rawDesc = []byte{
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
-var file_example_proto_hello_api_proto_goTypes = []interface{}{
+var file_proto_hello_api_proto_goTypes = []interface{}{
 	(*TestReq)(nil),       // 0: hello.TestReq
 	(*TestApiOutput)(nil), // 1: hello.TestApiOutput
 }
-var file_example_proto_hello_api_proto_depIdxs = []int32{
+var file_proto_hello_api_proto_depIdxs = []int32{
 	0, // 0: hello.TestApi.Version:input_type -> hello.TestReq
 	0, // 1: hello.TestApi.VersionTest:input_type -> hello.TestReq
 	0, // 2: hello.TestApiV2.Version1:input_type -> hello.TestReq
@@ -83,29 +82,29 @@ var file_example_proto_hello_api_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_example_proto_hello_api_proto_init() }
-func file_example_proto_hello_api_proto_init() {
-	if File_example_proto_hello_api_proto != nil {
+func init() { file_proto_hello_api_proto_init() }
+func file_proto_hello_api_proto_init() {
+	if File_proto_hello_api_proto != nil {
 		return
 	}
-	file_example_proto_hello_api1_proto_init()
+	file_proto_hello_api1_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_example_proto_hello_api_proto_rawDesc,
+			RawDescriptor: file_proto_hello_api_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   0,
 			NumExtensions: 0,
 			NumServices:   2,
 		},
-		GoTypes:           file_example_proto_hello_api_proto_goTypes,
-		DependencyIndexes: file_example_proto_hello_api_proto_depIdxs,
+		GoTypes:           file_proto_hello_api_proto_goTypes,
+		DependencyIndexes: file_proto_hello_api_proto_depIdxs,
 	}.Build()
-	File_example_proto_hello_api_proto = out.File
-	file_example_proto_hello_api_proto_rawDesc = nil
-	file_example_proto_hello_api_proto_goTypes = nil
-	file_example_proto_hello_api_proto_depIdxs = nil
+	File_proto_hello_api_proto = out.File
+	file_proto_hello_api_proto_rawDesc = nil
+	file_proto_hello_api_proto_goTypes = nil
+	file_proto_hello_api_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -221,7 +220,7 @@ var _TestApi_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "example/proto/hello/api.proto",
+	Metadata: "proto/hello/api.proto",
 }
 
 // TestApiV2Client is the client API for TestApiV2 service.
@@ -329,5 +328,5 @@ var _TestApiV2_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "example/proto/hello/api.proto",
+	Metadata: "proto/hello/api.proto",
 }

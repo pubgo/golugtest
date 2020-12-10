@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/pubgo/golug"
-	"github.com/pubgo/golug/cmd/ossync/rsync"
+	"github.com/pubgo/golugtest/ossync/rsync"
 )
 
 func main() {

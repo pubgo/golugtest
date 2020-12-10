@@ -33,7 +33,7 @@ test:
 	@go test -race -v ./... -cover
 
 .PHONY: proto
-proto: clear gen
+proto: clear
 	protoc -I. \
    -I/usr/local/include \
    -I${GOPATH}/src \
@@ -41,7 +41,7 @@ proto: clear gen
    -I${GOPATH}/src/github.com/gogo/protobuf \
    --go_out=plugins=grpc:. \
    --golug_out=. \
-	example/proto/hello/*
+	proto/hello/*
 
 	protoc -I. \
    -I/usr/local/include \
@@ -50,16 +50,12 @@ proto: clear gen
    -I${GOPATH}/src/github.com/gogo/protobuf \
    --go_out=plugins=grpc:. \
    --golug_out=. \
-	example/proto/login/*
+	proto/login/*
 
 .PHONY: clear
 clear:
-	rm -rf example/proto/*.go
-	rm -rf example/proto/**/*.go
-
-.PHONY: gen
-gen:
-	cd cmd/protoc-gen-golug && go install .
+	rm -rf proto/*.go
+	rm -rf proto/**/*.go
 
 .PHONY: build-example
 build-example:
@@ -68,8 +64,8 @@ build-example:
 
 .PHONY: ossync
 ossync:
-	cd cmd/ossync && go install ${LDFLAGS} -v .
+	cd ossync && go install ${LDFLAGS} -v .
 
 .PHONY: tickrun
 tickrun:
-	cd cmd/tickrun && go install ${LDFLAGS} -v .
+	cd tickrun && go install ${LDFLAGS} -v .

@@ -3,7 +3,7 @@ syntax = "proto3";
 package hello;
 
 import "google/api/annotations.proto";
-import "example/proto/hello/api1.proto";
+import "proto/hello/api1.proto";
 
 service TestApi {
   rpc Version(hello.TestReq) returns (hello.TestApiOutput){

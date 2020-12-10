@@ -24,9 +24,9 @@ func init() {
 
 func GetEntry() golug_entry.Entry {
 	ent := golug.NewCtlEntry(name)
-	xerror.Panic(ent.Version("v0.0.1"))
-	xerror.Panic(ent.Description("sync from local to remote"))
-	xerror.Exit(ent.Commands(GetDbCmd()))
+	ent.Version("v0.0.1")
+	ent.Description("sync from local to remote")
+	ent.Commands(GetDbCmd())
 
 	ent.Register(func() {
 		defer xerror.RespDebug()

@@ -1,12 +1,12 @@
 package task
 
 import (
-	"github.com/pubgo/golug/cmd/tickrun/server/db"
 	"net/http"
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/pubgo/golug/cmd/tickrun/server/models"
+	"github.com/pubgo/golugtest/tickrun/server/db"
+	"github.com/pubgo/golugtest/tickrun/server/models"
 	"github.com/pubgo/xerror"
 )
 

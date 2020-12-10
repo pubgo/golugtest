@@ -19,7 +19,7 @@ import (
 	badger "github.com/dgraph-io/badger/v2"
 	jsoniter "github.com/json-iterator/go"
 	"github.com/pubgo/golug/golug_env"
-	"github.com/pubgo/tikdog/tikdog_util"
+	"github.com/pubgo/golug/pkg/golug_util"
 	"github.com/pubgo/xerror"
 	"github.com/pubgo/xlog"
 	"github.com/pubgo/xprocess"
@@ -145,7 +145,7 @@ func checkAndBackup(dir string, kk *oss.Bucket) {
 }
 
 func checkAndSync(dir string, kk *oss.Bucket, db *badger.DB, ext string, c *atomic.Bool) {
-	if tikdog_util.IsNotExist(dir) {
+	if !golug_util.PathExist(dir) {
 		return
 	}
 
@@ -264,7 +264,7 @@ func checkAndSync(dir string, kk *oss.Bucket, db *badger.DB, ext string, c *atom
 
 func checkAndMove(kk *oss.Bucket, db *badger.DB, c *atomic.Bool) {
 	var handle = func(sf SyncFile) {
-		if !tikdog_util.IsNotExist(sf.Path) {
+		if golug_util.PathExist(sf.Path) {
 			return
 		}
 

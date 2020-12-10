@@ -3,10 +3,10 @@ package server
 import (
 	"github.com/pubgo/dix/dix_run"
 	"github.com/pubgo/golug"
-	"github.com/pubgo/golug/cmd/tickrun/server/models"
-	"github.com/pubgo/golug/cmd/tickrun/server/router"
 	"github.com/pubgo/golug/golug_entry"
-	"github.com/pubgo/golug/golug_plugin/plugins/golug_db"
+	"github.com/pubgo/golugin/golug_db"
+	"github.com/pubgo/golugtest/tickrun/server/models"
+	"github.com/pubgo/golugtest/tickrun/server/router"
 	"github.com/pubgo/xerror"
 )
 

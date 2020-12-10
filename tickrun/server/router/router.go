@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/pubgo/golug/cmd/tickrun/server/router/api/task"
+	"github.com/pubgo/golugtest/tickrun/server/router/api/task"
 	"github.com/pubgo/xerror"
 )
 

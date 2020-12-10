@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.com/pubgo/golug/golug_plugin/plugins/golug_db"
+	"github.com/pubgo/golugin/golug_db"
 	"xorm.io/xorm"
 )
 

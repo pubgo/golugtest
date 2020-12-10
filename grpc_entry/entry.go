@@ -2,8 +2,8 @@ package grpc_entry
 
 import (
 	"github.com/pubgo/golug"
-	"github.com/pubgo/golug/example/grpc_entry/handler"
 	"github.com/pubgo/golug/golug_entry"
+	"github.com/pubgo/golugtest/grpc_entry/handler"
 	"github.com/pubgo/xerror"
 )
 
