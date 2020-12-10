@@ -15,10 +15,7 @@ LDFLAGS=-ldflags " \
 
 .PHONY: build
 build:
-	@go build ${LDFLAGS} -mod vendor -race -v -o main cmd/golug/main.go
-
-build_hello_test:
-	go build ${LDFLAGS} -mod vendor -v -o main  example/hello/main.go
+	@go build ${LDFLAGS} -mod vendor -race -v -o main main.go
 
 .PHONY: install
 install:
@@ -56,11 +53,6 @@ proto: clear
 clear:
 	rm -rf proto/*.go
 	rm -rf proto/**/*.go
-
-.PHONY: build-example
-build-example:
-	go build ${LDFLAGS} -mod vendor -v -o main example/main.go
-
 
 .PHONY: ossync
 ossync:

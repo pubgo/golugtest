@@ -3,13 +3,42 @@ app:
   name: "golug"
   version: "v0.0.1"
   home: ""
-  debug: "true"
+  debug: true
 recovery:
   enabled: true
+task_entry:
+  enabled: true
+  consumers:
+    - driver: nsq
+      name: default
+grpc_entry:
+  write_buffer_size: 1024
+  read_buffer_size: 1024
+  initial_window_size: 1
+  initial_conn_window_size: 1
+  keepalive_params:
+    max_connection_idle: 1s
+    max_connection_age: 2s
+    max_connection_age_grace: 2s
+    time: 1s
+    timeout: 1s
+  keepalive_policy:
+    permit_without_stream: true
+    min_time: 1s
+  codec: json
+  cp: gzip
+  dc: gzip
+  max_receive_message_size: 1
+  max_send_message_size: 1
+  max_concurrent_streams: 1
+  creds: tls
+  connection_timeout: 2s
+  max_header_list_size: 2
+  header_table_size: 1
 http_entry:
   enabled: true
   prefork: false
-  server_header: ''
+  server_header: ""
   strict_routing: false
   case_sensitive: false
   immutable: false
@@ -35,11 +64,11 @@ watcher:
   enabled: true
   address:
     - "127.0.0.1:2379"
-etcd:
+ws:
   enabled: true
-  default:
-    - "127.0.0.1:2379"
-    - "127.0.0.1:2389"
+  configs:
+    default:
+      origins: ["*"]
 redis:
   enabled: true
   codis:
@@ -62,30 +91,12 @@ mongodb:
   enabled: true
   default:
     url: "mongodb://localhost:8080"
-log:
+nsq:
   enabled: true
-  level: debug
-  development: true
-  disableCaller: false
-  disableStacktrace: false
-  sampling: null
-  encoding: console
-  encoderConfig:
-    messageKey: M
-    levelKey: L
-    timeKey: T
-    nameKey: 'N'
-    callerKey: C
-    stacktraceKey: S
-    lineEnding: |+
-    levelEncoder: capitalColor
-    timeEncoder: iso8601
-    durationEncoder: string
-    callerEncoder: default
-    nameEncoder: ''
-  outputPaths:
-    - stderr
-  errorOutputPaths:
-    - stderr
-  initialFields:
-    name: test
+  configs:
+    default:
+      address: "localhost:4150"
+      lookup: ["nsqlookup-001.service.local:4161","nsqlookup-002.service.local:4161","nsqlookup-003.service.local:4161"]
+    test_shanghai:
+      address: "localhost:4150"
+      lookup: ["nsqlookup-001.service.local:4161","nsqlookup-002.service.local:4161","nsqlookup-003.service.local:4161"]
